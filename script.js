@@ -345,6 +345,33 @@
     updateParallax();
   }
 
+  /* 5b. HERO CHARACTER SCROLL PARALLAX — scroll down → character floats up */
+  function initHeroCharParallax() {
+    if (reducedMotionQuery.matches) return;
+    const wrap = document.querySelector('.hero-character-wrap');
+    if (!wrap) return;
+
+    let ticking = false;
+    let baseScrollY = 0; // captured once so the char starts at neutral
+
+    function update() {
+      ticking = false;
+      const scrollY = window.scrollY || window.pageYOffset;
+      // Move up at 0.38× scroll speed, clamped so it doesn't fly off-screen
+      const lift = Math.min(scrollY * 0.38, 140);
+      wrap.style.transform = `translateY(${-lift.toFixed(1)}px)`;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    update();
+  }
+
   /* 6. THUMBNAIL LIGHTBOX VIEWER */
   function initLightbox() {
     const lightbox = document.getElementById('lightbox');
@@ -862,6 +889,7 @@
     initPortfolioCarousel();
     initProjectVideos();
     initParallaxLayers();
+    initHeroCharParallax();
     initLightbox();
     initInlineGameAssets();
 

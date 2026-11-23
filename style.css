@@ -377,6 +377,7 @@ article[id] {
   align-items: center;
   position: relative;
   z-index: 2;
+  will-change: transform;
 }
 
 .hero-character-art {
@@ -384,19 +385,27 @@ article[id] {
   height: auto;
   max-height: 78vh;
   object-fit: contain;
-  filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.7));
-  animation: heroZeroGFloat 5s ease-in-out infinite;
+  filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.75));
+  animation: heroZeroGFloat 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes heroZeroGFloat {
 
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
+  0% {
+    transform: translateY(0px) rotate(-1deg);
   }
 
-  50% {
-    transform: translateY(-16px) rotate(1.5deg);
+  30% {
+    transform: translateY(-28px) rotate(1.5deg);
+  }
+
+  60% {
+    transform: translateY(-18px) rotate(-0.5deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-1deg);
   }
 }
 
