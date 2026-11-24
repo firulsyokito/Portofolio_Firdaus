@@ -18,9 +18,9 @@
      ========================================================================== */
   --bg-hero-sky: url("assets/asset/Tak%20berjudul3_20261122172955.png");
   --bg-about-sky: url("assets/asset/about_sky_bg.png");
-  --bg-about-poles: url("assets/asset/Group%202.png");
+  --bg-about-poles: url("assets/asset/Tak%20berjudul4_20261124102957.png");
   --bg-reflection: url("assets/asset/about_sky_bg.png");
-  --bg-hill-back: url("assets/asset/Group%202.png");
+  --bg-hill-back: url("assets/asset/Tak%20berjudul4_20261124102957.png");
   --bg-hill-front: none;
   --bg-bush-divider: linear-gradient(to bottom, transparent, #181932);
   --bg-crystal-back: url("assets/asset/batu%20transparan%20fix%203.png");
@@ -543,6 +543,7 @@ article[id] {
   will-change: transform;
 }
 
+/* Tampilan Desktop / PC: Menggunakan latar panorama horizon penuh */
 @media (min-width: 900px) {
 
   .scenery-reflection,
@@ -550,7 +551,7 @@ article[id] {
     background-size: 100% 100%;
   }
 
-  .about-portrait-wrap {
+  .about-mobile-avatar-wrap {
     display: none !important;
   }
 }
@@ -559,10 +560,75 @@ article[id] {
   display: none;
 }
 
-@media (max-width: 767px) {
+/* Avatar Bulat 1:1 Sempurna & Tidak Terdistorsi */
+.about-avatar-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.45));
+}
 
-  .scenery-reflection,
+/* 1. Mobile / Android Avatar: Ukuran proporsional, pas & mantap di atas teks */
+.about-mobile-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(210px, 56vw, 290px);
+  height: clamp(210px, 56vw, 290px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto clamp(1.2rem, 3.5vw, 2rem);
+  animation: floatAvatar 4.5s ease-in-out infinite alternate;
+}
+
+/* 2. Desktop / PC Avatar: Tampil di sebelah kanan, ukuran diperkecil agar pas & bulat murni */
+.about-desktop-avatar-wrap {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-desktop-avatar-box {
+  position: relative;
+  width: clamp(280px, 24vw, 360px);
+  height: clamp(280px, 24vw, 360px);
+  aspect-ratio: 1 / 1;
+  animation: floatAvatar 5s ease-in-out infinite alternate;
+}
+
+@keyframes floatAvatar {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (min-width: 900px) {
+  .about-desktop-avatar-wrap {
+    display: flex;
+  }
+}
+
+@media (max-width: 899px) {
+  .about-desktop-avatar-wrap {
+    display: none !important;
+  }
+
   .scenery-hill-back {
+    background-size: cover;
+    background-position: center bottom;
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 767px) {
+  .scenery-reflection {
     background-size: cover;
   }
 }
@@ -581,11 +647,8 @@ article[id] {
 }
 
 .billboard-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: clamp(260px, 30vw, 420px);
+  display: none !important;
+}
   transform: rotate(-1deg);
   transition: transform 0.35s ease, filter 0.35s ease;
 }
@@ -790,14 +853,12 @@ article[id] {
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.22) 15%,
-    rgba(255, 255, 255, 0.45) 50%,
-    rgba(255, 255, 255, 0.22) 85%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.22) 15%,
+      rgba(255, 255, 255, 0.45) 50%,
+      rgba(255, 255, 255, 0.22) 85%,
+      transparent 100%);
   pointer-events: none;
 }
 
@@ -952,12 +1013,10 @@ article[id] {
     height: 1px;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      transparent 100%
-    );
+    background: linear-gradient(to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%);
   }
 }
 
@@ -1190,7 +1249,9 @@ article[id] {
 }
 
 /* #project-02 overflow hidden prevents Space Station clip bleed */
-#project-02 { overflow: hidden; }
+#project-02 {
+  overflow: hidden;
+}
 
 /* --------------------------------------------------------------------------
    5b. Side Decoration Sprites (User Game Assets & GIFs)
@@ -1253,6 +1314,7 @@ article[id] {
   0% {
     transform: translateY(0px) rotate(-1.5deg);
   }
+
   100% {
     transform: translateY(-12px) rotate(1.5deg);
   }
@@ -1262,6 +1324,7 @@ article[id] {
   0% {
     transform: translateY(0px) rotate(1.5deg);
   }
+
   100% {
     transform: translateY(-14px) rotate(-1.5deg);
   }
@@ -1550,10 +1613,18 @@ article[id] {
 .eden-bird,
 .bush-band,
 .crystal-layers,
-.footer-rocks { display: none !important; }
+.footer-rocks {
+  display: none !important;
+}
 
-.project-section--bushes { padding-block: var(--section-pad-y); overflow: hidden; }
-.project-section--crystals { padding-bottom: clamp(3.5rem, 8vw, 7rem); }
+.project-section--bushes {
+  padding-block: var(--section-pad-y);
+  overflow: hidden;
+}
+
+.project-section--crystals {
+  padding-bottom: clamp(3.5rem, 8vw, 7rem);
+}
 
 /* ==========================================================================
    MORE GAMES ON ITCH.IO BANNER (Clean & Seamless CTA above Footer)

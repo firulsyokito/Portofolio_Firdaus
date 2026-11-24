@@ -10,7 +10,7 @@ window.PORTFOLIO_CONFIG = {
     navBrand: "Firuls",
     title: "Muhamad Firdaus El Ghaby (Firuls) — Game Artist Portofolio",
     role: "2D, 3D & Pixel Artist | Game Artist",
-    profilePhoto: "assets/asset/firdaus_portrait.png",
+    profilePhoto: "assets/asset/Group 3.png",
     profilePhotoAlt: "Foto profil Muhamad Firdaus El Ghaby (Firuls)",
     heroCharacter: "assets/asset/Tak berjudul5_20261122164533.png",
     heroCharacterAlt: "Karakter Firuls",
@@ -25,8 +25,8 @@ window.PORTFOLIO_CONFIG = {
     heroSky: "assets/asset/Tak berjudul3_20261122172955.png",
     aboutSky: "assets/asset/about_sky_bg.png",
     lakeReflection: "assets/asset/about_sky_bg.png",
-    aboutPoles: "assets/asset/Group 2.png",
-    hillBack: "assets/asset/Group 2.png",
+    aboutPoles: "assets/asset/Tak berjudul4_20261124102957.png",
+    hillBack: "assets/asset/Tak berjudul4_20261124102957.png",
     hillFront: "none",
     bushDivider: "linear-gradient(to bottom, transparent, #181932)",
     crystalBack: "none",
@@ -126,12 +126,13 @@ window.PORTFOLIO_CONFIG = {
       playUrl: "https://fiz-studio.itch.io/fiz-catcher",
       playLabel: "Play On Itch.io",
       description: "Fiz Catcher reverse mekanik dari Pac-Man adalah game arcade kasual untuk 4 pemain bersama di satu layar. Saya bekerja sebagai perancang semua charakter berserta animasinya dan saya juga turun ikut andil dalam merancang desain level.",
-      carouselImage: "ASSET GERAK/FizCatcher1.png",
+      carouselImage: "Game 4/image (1).webp",
       video: "Game 4/footageFizCatcher.mp4",
       gallery: [
-        { src: "Game 4/FizCatcher1.png", alt: "Layar menu utama Fiz Catcher" },
-        { src: "Game 4/FizCatcher2.png", alt: "Layar koneksi empat pemain Fiz Catcher" },
-        { src: "Game 4/FizCatcher3.png", alt: "Arena gameplay padang rumput dan langit biru Fiz Catcher" }
+        { src: "Game 4/image.webp", alt: "Gameplay arena aksi Fiz Catcher 1" },
+        { src: "Game 4/image (1).webp", alt: "Gameplay pertarungan Fiz Catcher 2" },
+        { src: "Game 4/image (2).webp", alt: "Gameplay seru 4 pemain Fiz Catcher 3" },
+        { src: "Game 4/FizCatcher3.png", alt: "Arena gameplay padang rumput Fiz Catcher" }
       ]
     },
     {
