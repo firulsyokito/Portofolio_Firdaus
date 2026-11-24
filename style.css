@@ -560,7 +560,7 @@ article[id] {
   display: none;
 }
 
-/* Avatar Bulat 1:1 Sempurna & Tidak Terdistorsi */
+/* Frame Heptagon Group 3 — edge tajam, tidak distorsi */
 .about-avatar-img {
   display: block;
   width: 100%;
@@ -569,7 +569,7 @@ article[id] {
   border-radius: 0;
   object-fit: contain;
   object-position: center;
-  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.45));
+  filter: none;
 }
 
 /* 1. Mobile / Android Avatar: Ukuran proporsional, pas & mantap di atas teks */
