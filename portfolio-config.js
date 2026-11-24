@@ -69,7 +69,9 @@ window.PORTFOLIO_CONFIG = {
       gallery: [
         { src: "Game 1/Altalis1.png", alt: "Tangkapan layar judul dan karakter Altalis" },
         { src: "Game 1/Altalis2.png", alt: "Tangkapan layar dialog dan antarmuka Altalis" },
-        { src: "Game 1/Altalis3.png", alt: "Tangkapan layar eksplorasi level pixel art Altalis" }
+        { src: "Game 1/Altalis3.png", alt: "Tangkapan layar eksplorasi level pixel art Altalis" },
+        { src: "Game 1/Altalis4.png", alt: "Tangkapan layar environment background dan level design Altalis 1" },
+        { src: "Game 1/Altalis5.png", alt: "Tangkapan layar environment background dan level design Altalis 2" }
       ]
     },
     {

@@ -719,6 +719,249 @@ article[id] {
 }
 
 /* --------------------------------------------------------------------------
+   3.5. Skills & Tools Section (#skills)
+   -------------------------------------------------------------------------- */
+.skills-section {
+  position: relative;
+  z-index: 2;
+  background-color: var(--color-body-green);
+  padding-top: clamp(4rem, 8vw, 6.5rem);
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1100px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(127, 164, 248, 0.35), transparent);
+}
+
+.skills-container {
+  position: relative;
+  max-width: 1180px;
+}
+
+.skills-subheading {
+  display: inline-block;
+  font-size: clamp(0.78rem, 1vw, 0.88rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7fa4f8;
+  margin-bottom: 0.5rem;
+}
+
+.skills-heading {
+  margin: 0 0 clamp(0.75rem, 2vw, 1.25rem);
+  font-family: var(--font-brand);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.skills-intro {
+  max-width: 720px;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+  line-height: 1.75;
+  color: rgba(220, 226, 245, 0.88);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4.5rem);
+  position: relative;
+}
+
+/* Garis pemisah putih halus di antara 2 kolom */
+.skills-grid::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 15%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.22) 85%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Tanpa kotak/frame latar belakang - elegan, menyatu alami dengan background */
+.skill-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.5rem, 2vw, 1.5rem);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+  border: none;
+}
+
+.skill-card-badge {
+  align-self: flex-start;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7fa4f8;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 0.85rem;
+}
+
+.skill-card-title {
+  margin: 0 0 1rem;
+  font-family: 'ZOYAM', var(--font-sans);
+  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card-desc {
+  margin: 0 0 1.5rem;
+  font-size: clamp(0.92rem, 1.2vw, 1.02rem);
+  line-height: 1.7;
+  color: rgba(220, 226, 245, 0.85);
+}
+
+.skill-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex-grow: 1;
+}
+
+.skill-card-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: clamp(0.9rem, 1.15vw, 0.98rem);
+  line-height: 1.65;
+  color: rgba(230, 235, 250, 0.92);
+}
+
+.skill-card-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #7fa4f8;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.skill-card-list li strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.skill-tools-wrap {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.skill-tools-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(200, 210, 235, 0.75);
+  margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #f0f4ff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s var(--ease-out), box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(127, 164, 248, 0.24);
+  border-color: rgba(127, 164, 248, 0.65);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(127, 164, 248, 0.3);
+}
+
+.skill-tag:focus-visible {
+  outline: 2px solid #7fa4f8;
+  outline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Pada mobile, garis pemisah vertikal berubah menjadi garis horizontal */
+  .skills-grid::after {
+    top: auto;
+    bottom: auto;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%
+    );
+  }
+}
+
+/* --------------------------------------------------------------------------
    4. Portfolio Cosmic Space Body & Curved Carousel (#portofolio)
    -------------------------------------------------------------------------- */
 .portfolio-body {
@@ -1971,6 +2214,41 @@ article[id] {
   max-height: 480px;
   max-width: 100%;
   border-radius: 8px;
+}
+
+/* Khusus gambar background environment lebar (1 baris 2 kolom besar) */
+.raw-asset-item--wide-half {
+  flex: 1 1 calc(50% - clamp(1rem, 2vw, 2rem));
+  max-width: calc(50% - clamp(0.5rem, 1vw, 1rem));
+  min-width: min(100%, 360px);
+  padding: clamp(6px, 1.2vw, 14px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.raw-asset-item--wide-half img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: clamp(280px, 32vw, 450px) !important;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s var(--ease-out), filter 0.25s ease;
+}
+
+.raw-asset-item--wide-half:hover img {
+  transform: scale(1.02);
+  filter: brightness(1.08) drop-shadow(0 12px 28px rgba(127, 164, 248, 0.25));
+}
+
+@media (max-width: 768px) {
+  .raw-asset-item--wide-half {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 /* View More Button if category has many items */

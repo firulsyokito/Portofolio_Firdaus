@@ -5,6 +5,22 @@
     "title": "Altalis",
     "assets": [
       {
+        "fileName": "Screenshot 2026-06-10 084817.png",
+        "category": "Environment & Props",
+        "path": "asset game saya kerjakan/game 1/background/Screenshot 2026-06-10 084817.png",
+        "ext": ".png",
+        "type": "image",
+        "size": 331783
+      },
+      {
+        "fileName": "Screenshot 2026-06-10 090203.png",
+        "category": "Environment & Props",
+        "path": "asset game saya kerjakan/game 1/background/Screenshot 2026-06-10 090203.png",
+        "ext": ".png",
+        "type": "image",
+        "size": 277428
+      },
+      {
         "fileName": "batuh jatuh.png",
         "category": "Environment & Props",
         "path": "asset game saya kerjakan/game 1/batu trap/batuh jatuh.png",
@@ -27,22 +43,6 @@
         "ext": ".gif",
         "type": "image",
         "size": 16648
-      },
-      {
-        "fileName": "kilikk 4-Sheet.gif",
-        "category": "Boss & Enemies",
-        "path": "asset game saya kerjakan/game 1/boss 1/attack 3/kilikk 4-Sheet.gif",
-        "ext": ".gif",
-        "type": "image",
-        "size": 17197
-      },
-      {
-        "fileName": "enemy skill 3-Sheet.gif",
-        "category": "Boss & Enemies",
-        "path": "asset game saya kerjakan/game 1/boss 1/attack 4/enemy skill 3-Sheet.gif",
-        "ext": ".gif",
-        "type": "image",
-        "size": 16782
       },
       {
         "fileName": "kilikk 3-Sheet.gif",

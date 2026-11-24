@@ -28,6 +28,7 @@
     const sectionTargets = [
       { el: document.getElementById('home'), navKey: 'home' },
       { el: document.getElementById('about'), navKey: 'about' },
+      { el: document.getElementById('skills'), navKey: 'skills' },
       { el: document.getElementById('portofolio'), navKey: 'portofolio' },
       ...Array.from(document.querySelectorAll('.project-section')).map((el) => ({
         el,
@@ -814,6 +815,9 @@
             }
             if (asset.fileName.toLowerCase().includes('ui_asset')) {
               itemEl.classList.add('raw-asset-item--banner');
+            }
+            if (asset.path && asset.path.includes('game 1') && asset.path.includes('background')) {
+              itemEl.classList.add('raw-asset-item--wide-half');
             }
             itemEl.setAttribute('role', 'button');
             itemEl.setAttribute('tabindex', '0');
