@@ -564,10 +564,10 @@ article[id] {
 .about-avatar-img {
   display: block;
   width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: unset;
+  border-radius: 0;
+  object-fit: contain;
   object-position: center;
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.45));
 }
@@ -578,8 +578,8 @@ article[id] {
   justify-content: center;
   align-items: center;
   width: clamp(210px, 56vw, 290px);
-  height: clamp(210px, 56vw, 290px);
-  aspect-ratio: 1 / 1;
+  height: auto;
+  aspect-ratio: unset;
   margin: 0 auto clamp(1.2rem, 3.5vw, 2rem);
   animation: floatAvatar 4.5s ease-in-out infinite alternate;
 }
@@ -593,9 +593,9 @@ article[id] {
 
 .about-desktop-avatar-box {
   position: relative;
-  width: clamp(280px, 24vw, 360px);
-  height: clamp(280px, 24vw, 360px);
-  aspect-ratio: 1 / 1;
+  width: clamp(364px, 31vw, 468px);
+  height: auto;
+  aspect-ratio: unset;
   animation: floatAvatar 5s ease-in-out infinite alternate;
 }
 
